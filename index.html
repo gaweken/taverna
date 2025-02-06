@@ -1,158 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taverna do Gaweken - Em Construção</title>
+    <title>Página em Construção</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
-
-        * {
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-image: url('pergaminho.jpg');
+            background-size: cover;
+            color: #8b0000;
+            text-align: center;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: url('background.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            font-family: 'Uncial Antiqua', cursive;
-            position: relative;
-            height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        .overlay {
-            position: absolute;
+        #overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 3px solid #c4a44c;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        #conteudo {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
             border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .logo {
-            width: 200px;
+        #logo {
+            width: 250px;
             margin-bottom: 20px;
-			z-index: 3;
         }
 
         h1 {
-            font-size: 3rem;
-            color: #d4af37;
-            text-shadow: 3px 3px 5px black;
+            font-size: 3em;
+            margin-bottom: 10px;
         }
 
-        .scroll {
-            background: url('pergaminho.jpg') no-repeat center center/cover;
-            width: 100%;
-            max-width: 500px;
-            height: 200px;
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .botoes {
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin: 20px auto;
-            position: relative;
-            border: 5px solid #8B4513;
-            padding: 10px;
+            gap: 20px;
         }
 
-        .scroll p {
-            font-size: 1.5rem;
-            color: #5b3a1e;
-            font-weight: bold;
+        .botao {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #a0522d;
+            color: #fff8dc;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
         }
 
-        .typing {
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #f0c040;
-            padding: 10px;
+        .botao:hover {
+            background-color: #8b0000;
         }
 
-        .buttons {
+        #icones {
             margin-top: 20px;
         }
 
-        .btn {
+        .icone {
             display: inline-block;
-            padding: 12px 25px;
-            margin: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: white;
-            background: #8B4513;
-            border: 2px solid #d4af37;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 3px 3px 5px black;
+            margin: 0 10px;
+            font-size: 2em;
+            color: #a0522d;
+            transition: color 0.3s ease;
         }
 
-        .btn:hover {
-            background: #a0522d;
-            transform: scale(1.1);
+        .icone:hover {
+            color: #8b0000;
         }
 
-        footer {
-            position: absolute;
-            bottom: 10px;
-            font-size: 0.9rem;
-            color: #bbb;
-        }
+        /* Estilos para tornar a página responsiva */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
 
-    </style>
-</head>
-<body>
-	<img src="logo.png" alt="Logo Taverna" class="logo">
-    <div class="overlay"></div>
-    
+            p {
+                font-size: 1em;
+            }
 
-    <div class="content">
-        <h1>Bem-vindo à Taverna do Gaweken</h1>
-        
-        <div class="scroll">
-            <p>⚒️ Em Construção ⚒️</p>
-        </div>
+            .botoes {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-        <p class="typing"></p>
+            .botao {
+                display: block;
+                margin: 0 auto;
+                padding: 12px 20px;
+            }
 
-        <div class="buttons">
-            <a href="https://instadelivery.com.br/tavernadogaweken" target="_blank" class="btn">Conheça o Cardápio</a>
-            <a href="https://instagram.com.br/reinodeeldoria" target="_blank" class="btn">Entre no Reino de Eldoria</a>
-        </div>
-    </div>
-    
-    <footer>&copy; 2025 Taverna do Gaweken. Todos os direitos reservados.</footer>
+            #logo {
+                width: 200px;
+            }
 
-    <script>
-        // Efeito de digitação
-        const text = "O ferreiro está forjando este site... Em breve, um novo reino surgirá!";
-        let index = 0;
-        function typeWriter() {
-            if (index < text.length) {
-                document.querySelector(".typing").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 50);
+            #icones {
+                margin-top: 15px;
+            }
+
+            .icone {
+                font-size: 1.5em;
+                margin: 0 8px;
             }
         }
-        window.onload = typeWriter;
-    </script>
-</body>
-</html>
+    </style>
+</head>
 
+<body>
+    <div id="overlay">
+        <div id="conteudo">
+            <img id="logo" src="logo.png" alt="Logotipo">
+            <h1>Página em Construção</h1>
+            <p>Em breve, um novo reino de sabores e aventuras!</p>
+            <div class="botoes">
+                <a class="botao" href="https://instadelivery.com.br/tavernadogaweken" target="_blank">
+                    <i class="fas fa-utensils"></i> Nosso Cardápio
+                </a>
+                <a class="botao" href="https://instagram.com/reinodeeldoria" target="_blank">
+                    <i class="fab fa-instagram"></i> Conheça o Reino de Eldoria
+                </a>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+
+</html>
